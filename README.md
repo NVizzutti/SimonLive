@@ -5,12 +5,9 @@
 
 Basic simon says game developed in Unity 3D. The scripts for component classes, game UI, and game logic were written in C#.
 
-![screenshot4](Screenshots/work.jpg)
 
-##Game Logic 
+## Game Logic 
 The bulk of the game logic is contained within a single `GameManager` class inheriting from `MonoBehaviour` which is the case for all C# scripts in Unity. References to buttons are held in an Array, allowing for button activation from within the Game Manager. Unlike the buttons array, the game pattern is frequently updating and is therefore stored in a List.
-
-![screenshot2](Screenshots/play.jpg)
 
 Each round of the game begins by calling the `Coroutine` "Play", which allows Unity to pause execution of code for a defined duration, and continue where it left off. Each button referenced by the ID stored in `pattern` is activated, displaying the order to the user audibly and visually. 
 
@@ -50,8 +47,6 @@ As the pattern List grows in length, the defined delay is reduced by 20% each ti
 	}
 ```
 
-![screenshot3](Screenshots/gameover.jpg)
-
 If the game ends, the Start Menu component is activated tby invoking the `Activate` method on a stored reference. 
 ```C#
 	void ResetGame()
@@ -64,5 +59,4 @@ If the game ends, the Start Menu component is activated tby invoking the `Activa
 		delay = 1.0f;
 	}
   ```
-![screenshot1](Screenshots/home.jpg)
 
